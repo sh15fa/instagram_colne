@@ -1,0 +1,71 @@
+.myname{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    letter-spacing: -0.28px;
+}
+.myname img{
+    margin-left: 8px;
+}
+.me{
+    display: flex;
+    justify-content: space-between;
+    /* width: 30%;  */
+    margin: 25px 20px;
+}
+.myname{
+    /* width: 35%; */
+}
+.elips{
+    width: 8px;
+height: 8px;
+fill: var(--instagram-blue, #0095F6);
+}
+.msg1{
+    display: flex;
+    justify-content: space-between;
+    /* width: 110%; */
+}
+.msges{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    /* width: 25%; */
+    
+}
+.msgg{
+    color: #FFF;
+font-family: Poppins;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.15px;
+}
+.msgg1{
+    color: var(--instagram-grey, #969696);
+font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.ms{
+    color: #FFF;
+text-align: center;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+.requ{
+    color: #5E5E5E;
+text-align: center;
+font-family: Inter;
+font-size: 15px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}

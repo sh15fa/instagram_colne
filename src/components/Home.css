@@ -1,0 +1,105 @@
+.story{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    cursor: pointer;
+}
+.stories{
+    display: flex;
+    padding-bottom: 15px;
+   
+}
+.stories img{
+    height: 60px;
+    width: 60px;
+    border-radius: 70px;
+
+}
+.storyImg{
+    height: 70px;
+    width: 70px;
+    border: 2px solid red;
+    padding:  5px 5px 0 5px;
+    display: flex;
+    justify-content: center;
+    border-radius: 70px;
+}
+.avatar{
+    height: 56px;
+    width: 56px;
+    border-radius: 70px;
+}
+.avatar1{
+    height: 35px;
+    width: 35px;
+    border-radius: 70px;
+}
+.name{
+    color: #FFF;
+font-feature-settings: 'clig' off, 'liga' off;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 16px; /* 133.333% */
+text-transform: lowercase;
+}
+.name1{
+    color: #969696;
+font-family: Inter;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: capitalize;
+}
+p{
+    margin: 0;
+}
+.switch{
+    display: flex;
+    align-items: center;
+}
+.home{
+    display:flex;
+    justify-content: space-between;
+    
+}
+.follow{
+    color: var(--instagram-blue, #0095F6);
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.6px;
+text-transform: capitalize;
+}
+.following1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    
+}
+.following{
+    width: 30%;
+}
+.sug{
+    color: var(--instagram-grey, #969696);
+
+font-size: 13px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.26px;
+}
+.more{
+    color: #FAFAFA;
+font-size: 11px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.33px;
+text-transform: capitalize;
+}

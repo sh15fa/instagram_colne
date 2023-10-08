@@ -1,24 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
+import MainBar from './components/MainBar';
+import { ThemeProvider,Paper, createTheme } from '@mui/material';
+import CssBaseline from '@mui/material/CssBaseline';
+
+
+const darkTheme=createTheme({
+  palette:{
+    mode:'dark',
+    primary:{
+      main: '#ffffff'
+    },
+    secondary:{
+      main:'#1D1D1D'
+    }
+  }
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+    <CssBaseline/>
+    <Paper>
+      <MainBar/>
+      </Paper>
+    {/* <BrowserRouter>
+
+      
+    
+
+      <Router>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/search' element={<Search/>}/>
+        <Route path='/explore' element={<Explore/>}/>
+        <Route path='/reels' element={<Reels/>}/>
+        <Route path='/massenger' element={<Massenger/>}/>
+        <Route path='/notification' element={<Notifications/>}/>
+        <Route path='/create' element={<Create/>}/>
+        <Route path='/myProfile' element={<MyProfile/>}/>
+      </Router>
+    </BrowserRouter> */}
+    </ThemeProvider>
   );
 }
 
