@@ -61,13 +61,13 @@ export default function Create() {
             </div>
             <Divider/>
             <form className='form'>
-             <div> <label>
+             {/* <div> <label>
                Title <br/>
                 <input type='text'/>
-              </label></div>
+              </label></div> */}
               <div>
               <label>
-               Body <br/>
+               Description <br/>
                 <input type='text' className='textarea'/>
               </label></div>
               <div className='btns'>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300&family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Noto+Kufi+Arabic:wght@300&family=Poppins:wght@200&display=swap');
 .story{
     display: flex;
     flex-direction: column;
@@ -26,8 +28,8 @@
     border-radius: 70px;
 }
 .avatar{
-    height: 56px;
-    width: 56px;
+    height: 50px;
+    width: 50px;
     border-radius: 70px;
 }
 .avatar1{
@@ -63,6 +65,8 @@ p{
 .home{
     display:flex;
     justify-content: space-between;
+    /* margin-left: 200px; */
+    padding:0 20px;
     
 }
 .follow{
@@ -102,4 +106,60 @@ font-weight: 700;
 line-height: normal;
 letter-spacing: 0.33px;
 text-transform: capitalize;
+}
+.postCreator{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.postCreator img{
+    height: 38px;
+    width: 38px;
+    border-radius: 38px;
+    border: 1px solid red;
+
+}
+.createdPost{
+    height: 50vh;
+    width: 100%;
+    
+}
+.left{
+    width:50% ;
+    margin-left: 50px;
+}
+.ppost{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+.active{
+    display:flex;
+    justify-content:space-between;
+    width:13%;
+}
+.active1 img{
+    height: 20px;
+    width: 20px;
+}
+.active1
+{
+    display:flex;
+     justify-content:space-between;
+}
+.ppost div{
+    font-size: 13px;
+}
+.ppost span{
+    font-size: 14px;
+    font-family: 'Poppins', sans-seri;
+}
+.likes{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+.comm{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
 }

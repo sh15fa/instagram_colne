@@ -9,7 +9,7 @@ import singr from '../images/Avatars/singer.png';
 import fchef from '../images/StoriesAvatars/female-chef.png';
 import flight from '../images/StoriesAvatars/flight-attendant.png';
 import sales from '../images/StoriesAvatars/saleswoman.png';
-
+import massenger from '../images/messengar-logo.png';
 
 
 
@@ -96,7 +96,8 @@ export default function Massenger() {
 
 });
   return (
-    <div style={{display:'flex'}}>
+    // marginLeft:'250px'
+    <div style={{display:'flex',}}>
     <div className='myMsgs'>
       <div className='me'>
         <span className='myname'>shahdabuhamed <img src={arrow} alt='arrow'/></span>
@@ -112,9 +113,12 @@ export default function Massenger() {
     {msges}
     
     </div>
-    <Divider/>
-    <div>
-      hello
+    <Divider  orientation="vertical" flexItem/>
+    <div className='msg11'>
+      <img src={massenger} alt=''/>
+      <h1>Your Masseges</h1>
+      <div>Send private photos and messages to a friend or group</div>
+      <button><span>Send Masseges</span> </button>
     </div>
     </div>
   )

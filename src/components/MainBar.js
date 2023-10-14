@@ -18,7 +18,7 @@ import Massenger from './Massenger';
 import Notifications from './Notifications';
 import Create from './Create';
 import MyProfile from './MyProfile';
-import {  Typography } from '@mui/material';
+import {  Paper, Typography } from '@mui/material';
 import ExploreIcon from '@mui/icons-material/Explore';
 import SlideshowIcon from '@mui/icons-material/Slideshow';
 import ChatIcon from '@mui/icons-material/Chat';
@@ -26,12 +26,17 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import PersonIcon from '@mui/icons-material/Person';
 import logo from '../images/instagram-logo.png';
+import LogoutIcon from '@mui/icons-material/Logout';
 import '../App.css';
 const drawerWidth = 240;
 
 export default function MainBar() {
+  const handleLogOut=()=>{
+    localStorage.removeItem('token')
+  }
   return (
-    <BrowserRouter>
+    <Paper>
+    {/* // <BrowserRouter> */}
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
      
@@ -59,7 +64,7 @@ export default function MainBar() {
                 <ListItemIcon>
                 <HomeIcon/>
                 </ListItemIcon>
-                <Link to={'/'} className='links'><ListItemText primary='Home' /></Link>
+                <Link to={'/mainbar/home'} className='links'><ListItemText primary='Home' /></Link>
               </ListItemButton>
             </ListItem>
             <ListItem  disablePadding>
@@ -67,7 +72,7 @@ export default function MainBar() {
                 <ListItemIcon>
                 <SearchIcon/>
                 </ListItemIcon>
-                <Link to={'/search'} className='links'><ListItemText primary='Search' /></Link>
+                <Link to={'/mainbar/search'} className='links'><ListItemText primary='Search' /></Link>
               </ListItemButton>
             </ListItem>
             <ListItem  disablePadding>
@@ -75,7 +80,7 @@ export default function MainBar() {
                 <ListItemIcon>
                 <ExploreIcon/>
                 </ListItemIcon>
-                <Link to={'/explore'} className='links'><ListItemText primary='Explore' /></Link>
+                <Link to={'/mainbar/explore'} className='links'><ListItemText primary='Explore' /></Link>
               </ListItemButton>
             </ListItem>
             <ListItem  disablePadding>
@@ -83,7 +88,7 @@ export default function MainBar() {
                 <ListItemIcon>
                 <SlideshowIcon/>
                 </ListItemIcon>
-                <Link to={'/reels'} className='links'><ListItemText primary='Reels' /></Link>
+                <Link to={'/mainbar/reels'} className='links'><ListItemText primary='Reels' /></Link>
               </ListItemButton>
             </ListItem>
             <ListItem  disablePadding>
@@ -91,7 +96,7 @@ export default function MainBar() {
                 <ListItemIcon>
                 <ChatIcon/>
                 </ListItemIcon>
-                <Link to={'/massenger'} className='links'><ListItemText primary='Masseges' /></Link>
+                <Link to={'/mainbar/massenger'} className='links'><ListItemText primary='Masseges' /></Link>
               </ListItemButton>
             </ListItem>
             <ListItem  disablePadding>
@@ -99,7 +104,7 @@ export default function MainBar() {
                 <ListItemIcon>
                 <FavoriteBorderIcon/>
                 </ListItemIcon>
-                <Link to={'/notification'} className='links'><ListItemText primary='Notifications' /></Link>
+                <Link to={'/mainbar/notification'} className='links'><ListItemText primary='Notifications' /></Link>
               </ListItemButton>
             </ListItem>
             <Create/>
@@ -108,9 +113,18 @@ export default function MainBar() {
                 <ListItemIcon>
                 <PersonIcon/>
                 </ListItemIcon>
-                <Link to={'/myProfile'} className='links'><ListItemText primary='My Profile' /></Link>
+                <Link to={'/mainbar/myProfile'} className='links'><ListItemText primary='My Profile' /></Link>
               </ListItemButton>
             </ListItem>
+            <ListItem  disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                <LogoutIcon/>
+                </ListItemIcon>
+                <Link to={'/'} className='links'onClick={handleLogOut}><ListItemText primary='Logout' /></Link>
+              </ListItemButton>
+            </ListItem>
+            
         </List>
        
       
@@ -120,7 +134,7 @@ export default function MainBar() {
         component="main"
         sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
       >
-      <Routes>
+      {/* <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/search' element={<Search/>}/>
         <Route path='/explore' element={<Explore/>}/>
@@ -129,13 +143,13 @@ export default function MainBar() {
         <Route path='/notification' element={<Notifications/>}/>
         <Route path='/create' element={<Create/>}/>
         <Route path='/myProfile' element={<MyProfile/>}/>
-      </Routes>
+      </Routes> */}
         {/* <Toolbar /> */}
         
       </Box>
       
     </Box>
   
-    </BrowserRouter>
+    </Paper>
   );
 }

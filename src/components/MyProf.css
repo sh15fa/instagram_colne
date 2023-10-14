@@ -1,0 +1,52 @@
+.profImg{
+    height: 152px;
+    width: 152px;
+    border-radius: 70px;
+}
+
+.prof{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.prof h4{
+    margin: 0;
+}
+.prof button{
+    padding: 10px 16px;
+   border-radius: 9px;
+}
+.profDetails{
+    display: flex;
+    
+    gap: 70px;
+    margin:20px auto;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.follow1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.profile{
+    width: 60%;
+    margin: auto;
+}
+.proTabs{
+    display: flex;
+    justify-content: center;
+}
+.css-heg063-MuiTabs-flexContainer{
+    justify-content: center;
+}
+.css-qx8hqu-MuiTabs-indicator{
+    top: 0;
+}
+.css-rdiatk-MuiButtonBase-root-MuiTab-root{
+    font-size: 12px !important;
+}

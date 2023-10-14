@@ -1,0 +1,67 @@
+.auther {
+    height:100vh ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    
+}
+
+.phone{
+    position: relative;
+}
+.phone img{
+    height: 70vh;
+}
+.appl{
+    position: absolute;
+    top: 30px;
+    left: 0;
+}
+.log{
+    background-color: rgb(15, 15, 15);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 150%;
+    padding: 20px;
+    border-radius: 15px;
+}
+.log input{
+    margin: auto;
+    padding: 0 5px;
+    background-color: white;
+    color: black;
+}
+.log form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 20px;
+    width: 100%;
+
+}
+.log button{
+    background-color:#0095F6 ;
+    border-radius: 5px;
+    width: 100%;
+    color: white;
+    /* padding: 10px; */
+    font-size: 16px;
+    font-weight: bold;
+
+}
+.new{
+    background-color: rgb(15, 15, 15);
+    width: 150%;
+    text-align: center;
+    font-size: 14px;
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+    color: gray;
+
+
+}

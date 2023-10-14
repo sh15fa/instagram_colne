@@ -1,8 +1,11 @@
-.explore{
+.explore,.posts1 {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 7px 8px;
-    width: 50%;
+    margin: auto;
+}
+.explore{
+    width: 40%;
     margin: auto;
 }
 .image111{
@@ -10,12 +13,21 @@
     top: 7px;
     right: 7px;
 }
-.reels{
+.image11{
+    position: absolute;
+    top: 7px;
+    right: 25px;
+}
+.reels,.myReels{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 7px 8px;
-    width: 40%;
+    
     margin: auto;
+}
+.reels{
+   /* width: 20%; */
+   width: 40%;
 }
 .form{
     margin: auto;
@@ -41,7 +53,7 @@ input{
 .form button{
     padding: 5px 15px;
     color: white;
-    background-color: rgb(103, 103, 175);
+    background-color: #0095F6;
     border-radius:15px ;
     border: 0.5px solid white;
     margin: auto;
