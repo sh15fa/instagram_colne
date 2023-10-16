@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import Divider from '@mui/material/Divider';
 import saleWoman from '../images/StoriesAvatars/saleswoman.png';
@@ -18,12 +18,67 @@ import like from '../images/Icons/Lİke.svg';
 import comment from '../images/Icons/Comment.svg';
 import save from '../images/Icons/Save.svg';
 import SharePosts from '../images/Icons/SharePosts.svg';
+import { useState } from 'react';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import EditModal from './EditModal';
 
 
+  
+  const ITEM_HEIGHT = 48;
 
+  
 
 
 export default function Home() {
+const [memories, setMemories] = useState([]);
+const token = localStorage.getItem("token");
+useEffect(()=>{
+    axios
+    .get("http://16.170.173.197/posts", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((response) => {
+        console.log(response);
+      setMemories(response.data.posts);
+    })
+    .catch((error) => {
+      console.log("Error Fedching memories", error);
+    });
+},[]);
+const [anchorEl, setAnchorEl] = React.useState(null);
+const open = Boolean(anchorEl);
+const handleClick = (event) => {
+  setAnchorEl(event.currentTarget);
+};
+const handleClose = () => {
+  setAnchorEl(null);
+};
+const handleDeletePost = (postId) => {
+  console.log('hellllo0',postId)
+    
+    axios
+      .request({
+        method: "delete",
+        url: `http://16.170.173.197/posts/${postId}`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        const updatedMemories = memories.filter((memory) => {
+          return memory.id !== postId;
+        });
+        setMemories(updatedMemories);
+      })
+      .catch((error) => {
+        console.error("Error deleting post:", error);
+      });
+  };
     const story=[
         {
         id:1,
@@ -103,39 +158,6 @@ const followings=[
 },
 ]
 
-const postss=[
-    {
-    id:1,
-    img:singer,
-    name:'Nada Ahmad',
-    post:'https://www.toa.edu.my/static/styles/images/programme/dg/dg-dip-hero.webp',
-    likes:500,
-    commentName:'Safa',
-    comment:'Enjoying a peaceful evening by the beach, watching the sun set over the horizon. The colors are simply breathtaking. ️🤍'
-
-},
-{
-    id:2,
-    img:flight,
-    name:'Ruba Salem',
-    post:'https://www.bhg.com/thmb/Png_RwypjtceaJgZkb4Rl81gk64=/4000x0/filters:no_upscale():strip_icc()/bhg-recipe-flaky-biscuits-Hero-01-B-b09e956a95d24b0e9fe30cb1fca9721a.jpg',
-    likes:225,
-    commentName:'',
-    comment:''
-
-},
-{
-    id:3,
-    img:graduater,
-    name:'Soltan Ali',
-    post:'https://media.cnn.com/api/v1/images/stellar/prod/i-stock-1287493837-1.jpg?c=16x9&q=h_720,w_1280,c_fill',
-    likes:300,
-    commentName:'Seed Azzam',
-    comment:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ️😎'
-
-},
-
-];
 
 const stories=story.map((stori)=>{
     console.log(stori.img);
@@ -167,14 +189,47 @@ const follows=followings.map((follow)=>{
   </div>
 
 });
-const postss1=postss.map((p)=>{
+const postss1=memories.map((p)=>{
     return <div key={p.id} className='ppost'>
-        <div className='postCreator'>
-            <img src={p.img} alt=''/>
-            <span>{p.name}</span>
+        <div style={{display:'flex',justifyContent:'space-between'}}><div className='postCreator'>
+            <img src={p.user.avatar} alt=''/>
+            <span>{p.user.userName}</span>
         </div>
         <div>
-            <img src={p.post} alt='' className='createdPost'/>
+      <IconButton
+        aria-label="more"
+        id="long-button"
+        aria-controls={open ? 'long-menu' : undefined}
+        aria-expanded={open ? 'true' : undefined}
+        aria-haspopup="true"
+        onClick={handleClick}
+      >
+        <MoreVertIcon />
+      </IconButton>
+      <Menu
+        id="long-menu"
+        MenuListProps={{
+          'aria-labelledby': 'long-button',
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        PaperProps={{
+          style: {
+            maxHeight: ITEM_HEIGHT * 4.5,
+            width: '20ch',
+          },
+        }}
+      >
+        {/* <MenuItem>Edit</MenuItem> */}
+        <EditModal postId={p.id} desc={p.description} imgPost={p.image} setpost={setMemories}/>
+        <MenuItem  onClick={()=>handleDeletePost(p.id)}>Delete</MenuItem>
+           
+        
+      </Menu>
+    </div></div>
+        <div>
+            <img src={p.image} alt='' className='createdPost'/>
         </div>
         <div className='active1'>
             <div className='active'>
@@ -186,13 +241,13 @@ const postss1=postss.map((p)=>{
             <img src={save} alt=''/>
             </div>
         </div>
-        <div className='likes'>{p.likes} Likes</div>
+        <div className='likes'>700 Likes</div>
         <div>
-            <div className='likes'>
-                {p.commentName}
-            </div>
+            {/* <div className='likes'>
+                 {p.commentName} 
+            </div> */}
             <div className='comm'>
-                {p.comment}
+                {p.description}
             </div>
         </div>
     </div>

@@ -88,6 +88,9 @@ text-transform: capitalize;
 }
 .following{
     width: 30%;
+    position: fixed;
+    top: 0;
+    right: 25px;
 }
 .sug{
     color: var(--instagram-grey, #969696);

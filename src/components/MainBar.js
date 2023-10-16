@@ -34,6 +34,7 @@ export default function MainBar() {
   const handleLogOut=()=>{
     localStorage.removeItem('token')
   }
+  
   return (
     <Paper>
     {/* // <BrowserRouter> */}
